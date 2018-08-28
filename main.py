@@ -17,14 +17,14 @@ df['num'] = df['num'].apply(pd.to_numeric)  # change num to float
 
 cityData = []
 for i in range(len(cities)):
-    cityData.append(df.loc[(df['Property Type'] == 'Apartment') & (df['Number of Bedrooms'] == 'Two bed') & (df['Location'] == cities[i])])
+    cityData.append(df.loc[(df['Property Type'] == 'All property types') & (df['Number of Bedrooms'] == 'All bedrooms') & (df['Location'] == cities[i])])
     plt.plot(cityData[i]['Quarter'], cityData[i]['num'])
 
 
-plt.legend(['Dublin', 'Galway', 'Cork', 'Limerick', 'Athlone', 'Waterford'], loc='upper left')
+plt.legend(['Dublin', 'Galway', 'Cork', 'Limerick', 'Athlone', 'Waterford'], loc='upper left', fontsize='xx-large')
 plt.ylabel('Rent €')
 plt.xlabel('Year')
 
-plt.title('Average price of 2 Bed apartment')
+plt.title('Average monthly rent | all types')
 plt.grid(True)
 plt.show()
